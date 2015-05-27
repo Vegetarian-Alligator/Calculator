@@ -6,6 +6,9 @@
 
 int main(int argc, char *argv[]){
 
+//printf("Length %i",strelen(argv[0][0]);
+//return 0;
+
 
 if (argc != 2){
 	printf("number + number");
@@ -21,32 +24,29 @@ int i=0;
 int powindex=0;
 int convertchar;
 
-printf("test");
-/*
-while (argindex++!=argc){
-	subresult=0;
-	while (i!=strlen(argv[argindex])){
-		convertchar= argv[argindex][i]-'0';
-		exit(0);
-		printf("Yes or no.");
-		if (convertchar < 0 || convertchar > 9){
-			if (argv[argindex][i]=='+'){
+//while (argindex++!=argc){
+//	subresult=0;
+	while (argv[argindex][i++] != '\0'){
+		convertchar= argv[argindex][i-1]-'\0';
+		printf("convertchar for this cycle is: %i the original value was: %c\n", convertchar,argv[argindex][i-1]);
+		if (!(convertchar < 0 || convertchar > 9)){
+			if (argv[argindex][i-1]=='+'){
 				powindex=0;
 				result+=subresult;
 				subresult=0;
 				continue;
 			}else{
-				printf("Error!  Invalid Operation Specified\n");
+				printf("Error!  Invalid Operation Specified i: %i c:%c convertchar: %i\n",i,argv[argindex][i-1],convertchar);
 				return 2;
 			}
 		}
 		subresult+=convertchar*pow(base,powindex++);
-	printf("added something\n");	
+//	printf("added something\n");	
 }
 
 //printf("Your chosen opnumber was:  %i",i);
 
-}
-//printf("The result of your additions was: %i",result);
-*/
+//}
+printf("The result of your additions was: %i or %i\n",result,subresult);
+
 }
