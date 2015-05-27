@@ -20,15 +20,14 @@ int b;
 printf("Enter 1 for +, Enter 2 for -, Enter 3 for *: ");
 scanf("%i",&func);
 
+int i;
+for (i=1,i
+
 if (func > 3 || func <1 ) {
 	printf("Error.  You did not follow the instructions.");
 	return -1;
 }
-printf("\nEnter the first number to be operated on: ");
-scanf("%i", &a);
-printf("\nEnter the second number to be operated on: ");
-scanf("%i", &b);
-printf("\n\n");
+
 int (*funcpt[3])(int,int);
 funcpt[0]=&addInt;
 funcpt[1]=&subInt;
