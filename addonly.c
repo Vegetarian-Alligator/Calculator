@@ -4,6 +4,11 @@
 #include <stdio.h>
 #include <math.h>
 
+
+
+
+
+
 int main(int argc, char *argv[]){
 
 //printf("Length %i",strelen(argv[0][0]);
@@ -27,9 +32,9 @@ int convertchar;
 //while (argindex++!=argc){
 //	subresult=0;
 	while (argv[argindex][i++] != '\0'){
-		convertchar= argv[argindex][i-1]-'\0';
+		convertchar= argv[argindex][i-1]-48;
 		printf("convertchar for this cycle is: %i the original value was: %c\n", convertchar,argv[argindex][i-1]);
-		if (!(convertchar < 0 || convertchar > 9)){
+		if ((convertchar < 0 || convertchar > 9)){
 			if (argv[argindex][i-1]=='+'){
 				powindex=0;
 				result+=subresult;
@@ -40,13 +45,14 @@ int convertchar;
 				return 2;
 			}
 		}
-		subresult+=convertchar*pow(base,powindex++);
-//	printf("added something\n");	
+					
+		subresult*=pow(base,powindex++);
+		subresult+=convertchar;
 }
 
 //printf("Your chosen opnumber was:  %i",i);
 
 //}
-printf("The result of your additions was: %i or %i\n",result,subresult);
+printf("The result of your additions was: %i\n",result+subresult);
 
 }
